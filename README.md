@@ -118,6 +118,41 @@ curl -s <url> | openssl dgst -sha384 -binary | openssl base64 -A
 Fonts load via `<link>` with `preconnect`, not a CSS `@import`, because an `@import`
 blocks the stylesheet from being parsed until the font CSS arrives.
 
+## Deploying
+
+There is no build step, so any static host works. On Vercel: import the repo and deploy
+with the default settings. Leave the framework preset as **Other**, and leave the build
+command and output directory empty - the repo root is what gets served.
+
+Verified locally over HTTP: every page returns 200, `/` serves `index.html`, unknown
+paths fall through to `404.html`, and no filename depends on case (Windows ignores case,
+Linux does not, so a wrong-case reference would work locally and 404 in production).
+
+`cleanUrls` is safe to turn on. The nav highlight normalises the path, so it works
+whether the host serves `/about.html` or `/about`.
+
+After the first deploy, fill in the real domain in three places, or link previews and
+search indexing stay broken:
+
+- `og:image` and `og:url` in every page's `<head>` - Open Graph needs absolute URLs
+- `<loc>` entries in `sitemap.xml`
+- the `Sitemap:` line in `robots.txt`
+
+### Before demoing on a phone or conference wifi
+
+Some images are much larger than the size they are displayed at:
+
+| Page | Total | Loaded up front |
+|---|---|---|
+| `index.html` | 3.9 MB | 1.8 MB |
+| `note.html` | 6.6 MB | 0.37 MB (rest is lazy) |
+| everything else | under 1.3 MB | under 0.12 MB |
+
+The worst offender is `note-provider-woman.png`: 1023x1280 and 1.8 MB, displayed at
+200px. The note scans are correctly sized but are PNGs of handwriting, which compresses
+far better as WebP. Resizing the avatars and converting the scans would take the site
+from 13 MB to roughly 2 MB without any visible difference.
+
 ## Known gaps
 
 Everything below is deliberate for a v1 mock, not an oversight.

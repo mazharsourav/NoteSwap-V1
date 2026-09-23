@@ -66,13 +66,18 @@ const siteFooter = `
 // Uses aria-current instead of a class because .header .active is already
 // taken by the mobile navbar slide-in.
 const markCurrentPage = () => {
-    let page = window.location.pathname.split('/').pop();
-    if (page === '') {
-        page = 'index.html'; // the server serves index.html for a bare "/"
-    }
+    // Reduces a path to a bare page name, so this works whether the host
+    // serves "/about.html" or the extensionless "/about" that Vercel's
+    // cleanUrls setting (and similar hosts) produce.
+    const pageName = path => {
+        const last = path.split('/').pop().replace(/\.html$/, '');
+        return last === '' ? 'index' : last;
+    };
+
+    const current = pageName(window.location.pathname);
 
     document.querySelectorAll('.header .navbar a').forEach(link => {
-        if (link.getAttribute('href') === page) {
+        if (pageName(link.getAttribute('href')) === current) {
             link.setAttribute('aria-current', 'page');
         }
     });

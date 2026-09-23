@@ -1,3 +1,5 @@
+# Sitemap must be an absolute URL once the real domain is known:
+# Sitemap: https://YOUR-DOMAIN/sitemap.xml
 User-agent: *
 Allow: /
 Disallow: /payment.html
