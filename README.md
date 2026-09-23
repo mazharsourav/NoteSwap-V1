@@ -178,21 +178,6 @@ search indexing stay broken:
 - `<loc>` entries in `sitemap.xml`
 - the `Sitemap:` line in `robots.txt`
 
-### Before demoing on a phone or conference wifi
-
-Some images are much larger than the size they are displayed at:
-
-| Page | Total | Loaded up front |
-|---|---|---|
-| `index.html` | 3.9 MB | 1.8 MB |
-| `note.html` | 6.6 MB | 0.37 MB (rest is lazy) |
-| everything else | under 1.3 MB | under 0.12 MB |
-
-The worst offender is `note-provider-woman.png`: 1023x1280 and 1.8 MB, displayed at
-200px. The note scans are correctly sized but are PNGs of handwriting, which compresses
-far better as WebP. Resizing the avatars and converting the scans would take the site
-from 13 MB to roughly 2 MB without any visible difference.
-
 ## Known gaps
 
 Everything below is deliberate for a v1 mock, not an oversight — see "This is a v1"
@@ -222,7 +207,3 @@ work, so link previews will not show an image until the domain is filled in.
 contents and section banners, and 367 lines of dead rules were removed. Splitting it
 per page would cut what each page downloads, but at this size the saving is small and
 the risk of moving a rule into the wrong file is not. Worth doing if it keeps growing.
-
-**Unused images** still in `assets/img/`: `about-us.svg`, `bg.gif`, `book-stack.png`,
-`diary.svg`, `information-button.png`, `learning.svg`, `mathematics-bro.svg`,
-`number-1.svg`, `number-2.svg`, `online-transactions.svg`.
