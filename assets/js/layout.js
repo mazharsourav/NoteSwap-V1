@@ -3,33 +3,34 @@
 // a <div id="site-header"></div> and a <div id="site-footer"></div> placeholder.
 
 const siteHeader = `
+    <a href="#main" class="skip-link">Skip to main content</a>
     <header class="header">
-        <a href="index.html" class="logo"><i class="fa-duotone fa-solid fa-book"></i> NoteSwap</a>
-        <nav class="navbar">
-            <div id="close-navbar" class="fas fa-times"></div>
+        <a href="index.html" class="logo"><i class="fa-solid fa-book" aria-hidden="true"></i> NoteSwap</a>
+        <nav class="navbar" id="navbar" aria-label="Main">
+            <button id="close-navbar" class="fas fa-times" aria-label="Close menu"></button>
             <a href="index.html">Home</a>
             <a href="notes.html">Notes</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </nav>
         <div class="icons">
-            <a href="login.html"><div id="account-btn" class="fas fa-user"></div></a>
-            <div id="menu-btn" class="fas fa-bars"></div>
+            <a href="login.html" id="account-btn" class="fas fa-user" aria-label="Log in to your account"></a>
+            <button id="menu-btn" class="fas fa-bars" aria-label="Open menu" aria-expanded="false" aria-controls="navbar"></button>
         </div>
     </header>
 `;
 
 const siteFooter = `
-    <section class="footer">
+    <footer class="footer">
         <div class="box-container">
             <div class="box">
-                <h3><i class="fa-duotone fa-solid fa-book">     N o t e S w a p</i></h3>
+                <h3><i class="fa-solid fa-book" aria-hidden="true"></i> <span class="brand">NoteSwap</span></h3>
                 <p>Share, exchange, and access notes easily. Simplify your study process with collaborative tools.</p>
                 <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-linkedin"></a>
+                    <a href="#" aria-label="NoteSwap on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="NoteSwap on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="NoteSwap on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="NoteSwap on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                 </div>
             </div>
             <div class="box">
@@ -41,20 +42,24 @@ const siteFooter = `
             </div>
             <div class="box">
                 <h3>Useful Links</h3>
+                <a href="our-story.html" class="link">Our Story</a>
+                <a href="pricing.html" class="link">Pricing</a>
                 <a href="contact.html" class="link">Help Center</a>
-                <a href="contact.html" class="link">Ask Question</a>
-                <a href="contact.html" class="link">Send Feedback</a>
                 <a href="terms.html" class="link">Terms of Use</a>
             </div>
             <div class="box">
                 <h3>Service</h3>
                 <p>Subscribe for Premium Service</p>
-                <input type="email" name="" placeholder="enter your email" id="" class="email">
-                <input type="submit" value="Subscribe" class="btn">
+                <form class="subscribe-form" data-demo-form novalidate>
+                    <label for="subscribe-email" class="sr-only">Your email address</label>
+                    <input type="email" id="subscribe-email" name="email" placeholder="enter your email" class="email" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                    <p class="form-message" role="status"></p>
+                </form>
             </div>
         </div>
         <div class="credit">Created By <span><a href="index.html">NoteSwap Inc.</a></span> | All Right Reserved !</div>
-    </section>
+    </footer>
 `;
 
 // Marks the nav link for the page we are on.

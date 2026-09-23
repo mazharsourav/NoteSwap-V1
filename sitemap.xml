@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <loc> values must become absolute URLs once the real domain is known. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>index.html</loc>
+    </url>
+    <url>
+        <loc>notes.html</loc>
+    </url>
+    <url>
+        <loc>note.html</loc>
+    </url>
+    <url>
+        <loc>about.html</loc>
+    </url>
+    <url>
+        <loc>our-story.html</loc>
+    </url>
+    <url>
+        <loc>contact.html</loc>
+    </url>
+    <url>
+        <loc>pricing.html</loc>
+    </url>
+    <url>
+        <loc>terms.html</loc>
+    </url>
+    <url>
+        <loc>login.html</loc>
+    </url>
+    <url>
+        <loc>signup.html</loc>
+    </url>
+</urlset>

@@ -2,176 +2,196 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/img/logo.png" type="image/png">
-    <title>Courses</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <title>Browse Notes - NoteSwap</title>
+    <meta name="description" content="Browse study notes by subject and semester. Computer science, business, pharmacy, civil, English and electrical engineering.">
+    <link rel="canonical" href="notes.html">
+
+    <!--Link preview. og:url and og:image need the real domain before launch-->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NoteSwap">
+    <meta property="og:title" content="Browse Notes - NoteSwap">
+    <meta property="og:description" content="Browse study notes by subject and semester. Computer science, business, pharmacy, civil, English and electrical engineering.">
+    <meta property="og:image" content="assets/img/logo.png">
+    <meta name="twitter:card" content="summary">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
+
+    <!--Icons and slider-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.css" integrity="sha384-gAPqlBuTCdtVcYt9ocMOYWrnBZ4XSL6q+4eXqwNycOr4iFczhNKtnYhF3NEXJM51" crossorigin="anonymous" referrerpolicy="no-referrer">
+
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div id="site-header"></div>
 
+    <main id="main">
+
 
     <!--Notes Part-->
     <section class="heading-link">
         <!-- <h3>Notes</h3> -->
+        <h1>Notes</h1>
         <p><a href="index.html">Home</a> / Notes </p>
     </section>
 
     <section class="courses">
-        <h1 class="heading"> Our Notes </h1>
+        <h2 class="heading">Our Notes</h2>
         <div class="box-container">
 
             <div class="box">
                 <div class="image">
-                    <img src="assets/img/eee.svg" alt="">
+                    <img src="assets/img/computer-science.svg" alt="" width="300" height="200" loading="lazy">
                     <h3>Automata</h3>
                 </div>
                 <div class="content">
                     <h3>Theory of Computation</h3>
-                    <p>Determenistic Finite Automata, Non-determenistic Finite Automata</p>
-                    <a href="note.html" class="btn">read more</a>
+                    <p>Deterministic and non-deterministic finite automata, with worked examples.</p>
+                    <a href="note.html" class="btn">Read More</a>
                     <div class="icons">
-                        <span><i class="fas fa-book"></i> All subjects</span>
-                        <span><i class="fas fa-book"></i> Includes Codes</span>
+                        <span><i class="fas fa-book" aria-hidden="true"></i> CSE</span>
+                        <span><i class="fas fa-file-lines" aria-hidden="true"></i> Includes diagrams</span>
                     </div>
                 </div>
             </div>
 
             <div class="box">
                 <div class="image">
-                    <img src="assets/img/eee.svg" alt="">
-                    <h3>System Analyis</h3>
+                    <img src="assets/img/notebook.svg" alt="" width="300" height="200" loading="lazy">
+                    <h3>System Analysis</h3>
                 </div>
                 <div class="content">
                     <h3>System Analysis and Design</h3>
-                    <p>System Analysis Life Cycle and methodologies, Agile method</p>
-                    <a href="#" class="btn">read more</a>
+                    <p>The system analysis life cycle, waterfall and agile methodologies.</p>
+                    <a href="note.html" class="btn">Read More</a>
                     <div class="icons">
-                        <span><i class="fas fa-book"></i> All subjects</span>
-                        <span><i class="fas fa-book"></i> Includes Codes</span>
+                        <span><i class="fas fa-book" aria-hidden="true"></i> CSE</span>
+                        <span><i class="fas fa-file-lines" aria-hidden="true"></i> Includes case studies</span>
                     </div>
                 </div>
             </div>
 
             <div class="box">
                 <div class="image">
-                    <img src="assets/img/eee.svg" alt="">
+                    <img src="assets/img/eee.svg" alt="" width="300" height="200" loading="lazy">
                     <h3>Micro-Processor</h3>
                 </div>
                 <div class="content">
-                    <h3>Architecture Of 8086</h3>
-                    <p>Diagram of 8086, Flag registors, Physical Address, Control registors</p>
-                    <a href="#" class="btn">read more</a>
+                    <h3>Architecture of 8086</h3>
+                    <p>Block diagram of the 8086, flag registers, physical address and control registers.</p>
+                    <a href="note.html" class="btn">Read More</a>
                     <div class="icons">
-                        <span><i class="fas fa-book"></i> All subjects</span>
-                        <span><i class="fas fa-book"></i> Includes Codes</span>
+                        <span><i class="fas fa-book" aria-hidden="true"></i> EEE</span>
+                        <span><i class="fas fa-file-lines" aria-hidden="true"></i> Includes diagrams</span>
                     </div>
                 </div>
             </div>
 
             <div class="box">
                 <div class="image">
-                    <img src="assets/img/eee.svg" alt="">
-                    <h3>Development</h3>
+                    <img src="assets/img/mathematics-amico.svg" alt="" width="300" height="200" loading="lazy">
+                    <h3>Discrete Math</h3>
                 </div>
                 <div class="content">
-                    <h3>Choose what's best for you!</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, voluptate?</p>
-                    <a href="#" class="btn">read more</a>
+                    <h3>Set Theory and Logic</h3>
+                    <p>Sets, relations, functions, propositional logic and proof techniques.</p>
+                    <a href="note.html" class="btn">Read More</a>
                     <div class="icons">
-                        <span><i class="fas fa-book"></i> All subjects</span>
-                        <span><i class="fas fa-book"></i> Includes Codes</span>
+                        <span><i class="fas fa-book" aria-hidden="true"></i> CSE</span>
+                        <span><i class="fas fa-file-lines" aria-hidden="true"></i> Includes exercises</span>
                     </div>
                 </div>
             </div>
 
             <div class="box">
                 <div class="image">
-                    <img src="assets/img/eee.svg" alt="">
-                    <h3>Development</h3>
+                    <img src="assets/img/chemistry.svg" alt="" width="300" height="200" loading="lazy">
+                    <h3>Organic Chemistry</h3>
                 </div>
                 <div class="content">
-                    <h3>Choose what's best for you!</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, voluptate?</p>
-                    <a href="#" class="btn">read more</a>
+                    <h3>Reaction Mechanisms</h3>
+                    <p>Substitution and elimination reactions, with mechanism diagrams and lab notes.</p>
+                    <a href="note.html" class="btn">Read More</a>
                     <div class="icons">
-                        <span><i class="fas fa-book"></i> All subjects</span>
-                        <span><i class="fas fa-book"></i> Includes Codes</span>
+                        <span><i class="fas fa-book" aria-hidden="true"></i> Pharmacy</span>
+                        <span><i class="fas fa-file-lines" aria-hidden="true"></i> Includes lab notes</span>
                     </div>
                 </div>
             </div>
 
             <div class="box">
                 <div class="image">
-                    <img src="assets/img/eee.svg" alt="">
-                    <h3>Development</h3>
+                    <img src="assets/img/english-teacher.svg" alt="" width="300" height="200" loading="lazy">
+                    <h3>Academic English</h3>
                 </div>
                 <div class="content">
-                    <h3>Choose what's best for you!</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, voluptate?</p>
-                    <a href="#" class="btn">read more</a>
+                    <h3>Report and Essay Writing</h3>
+                    <p>Structuring an academic report, citation styles and common grammar corrections.</p>
+                    <a href="note.html" class="btn">Read More</a>
                     <div class="icons">
-                        <span><i class="fas fa-book"></i> All subjects</span>
-                        <span><i class="fas fa-book"></i> Includes Codes</span>
+                        <span><i class="fas fa-book" aria-hidden="true"></i> English</span>
+                        <span><i class="fas fa-file-lines" aria-hidden="true"></i> Includes templates</span>
                     </div>
                 </div>
             </div>
 
             <div class="box hide">
                 <div class="image">
-                    <img src="assets/img/eee.svg" alt="">
-                    <h3>Development</h3>
+                    <img src="assets/img/dictionary.svg" alt="" width="300" height="200" loading="lazy">
+                    <h3>Database Systems</h3>
                 </div>
                 <div class="content">
-                    <h3>Choose what's best for you!</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, voluptate?</p>
-                    <a href="#" class="btn">read more</a>
+                    <h3>Normalisation and SQL</h3>
+                    <p>Normal forms up to BCNF, entity relationship diagrams and core SQL queries.</p>
+                    <a href="note.html" class="btn">Read More</a>
                     <div class="icons">
-                        <span><i class="fas fa-book"></i> All subjects</span>
-                        <span><i class="fas fa-book"></i> Includes Codes</span>
+                        <span><i class="fas fa-book" aria-hidden="true"></i> CSE</span>
+                        <span><i class="fas fa-file-lines" aria-hidden="true"></i> Includes queries</span>
                     </div>
                 </div>
             </div>
 
             <div class="box hide">
                 <div class="image">
-                    <img src="assets/img/eee.svg" alt="">
-                    <h3>Development</h3>
+                    <img src="assets/img/personal-finance.svg" alt="" width="300" height="200" loading="lazy">
+                    <h3>Accounting</h3>
                 </div>
                 <div class="content">
-                    <h3>Choose what's best for you!</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, voluptate?</p>
-                    <a href="#" class="btn">read more</a>
+                    <h3>Financial Statements</h3>
+                    <p>Balance sheets, income statements and cash flow, with fully worked problems.</p>
+                    <a href="note.html" class="btn">Read More</a>
                     <div class="icons">
-                        <span><i class="fas fa-book"></i> All subjects</span>
-                        <span><i class="fas fa-book"></i> Includes Codes</span>
+                        <span><i class="fas fa-book" aria-hidden="true"></i> BBA</span>
+                        <span><i class="fas fa-file-lines" aria-hidden="true"></i> Includes worked problems</span>
                     </div>
                 </div>
             </div>
 
             <div class="box hide">
                 <div class="image">
-                    <img src="assets/img/eee.svg" alt="">
-                    <h3>Development</h3>
+                    <img src="assets/img/mathematics-rafiki.svg" alt="" width="300" height="200" loading="lazy">
+                    <h3>Structural Analysis</h3>
                 </div>
                 <div class="content">
-                    <h3>Choose what's best for you!</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, voluptate?</p>
-                    <a href="#" class="btn">read more</a>
+                    <h3>Beams and Trusses</h3>
+                    <p>Shear force and bending moment diagrams, method of joints and sections.</p>
+                    <a href="note.html" class="btn">Read More</a>
                     <div class="icons">
-                        <span><i class="fas fa-book"></i> All subjects</span>
-                        <span><i class="fas fa-book"></i> Includes Codes</span>
+                        <span><i class="fas fa-book" aria-hidden="true"></i> Civil</span>
+                        <span><i class="fas fa-file-lines" aria-hidden="true"></i> Includes diagrams</span>
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <div class="load-more"><div class="btn">Load More</div></div>
+        <div class="load-more"><button type="button" class="btn">Load More</button></div>
 
     </section>
 
@@ -182,9 +202,11 @@
 
 
 
+    </main>
+
     <div id="site-footer"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.js" integrity="sha384-2UI1PfnXFjVMQ7/ZDEF70CR943oH3v6uZrFQGGqJYlvhh4g6z6uVktxYbOlAczav" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="assets/js/layout.js"></script>
     <script src="assets/js/main.js"></script>
 </body>

@@ -2,18 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/img/logo.png" type="image/png">
-    <title>Sign-In</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <title>Log In - NoteSwap</title>
+    <meta name="description" content="Log in to your NoteSwap account to download notes, track your uploads and manage your subscription.">
+    <link rel="canonical" href="login.html">
+
+    <!--Link preview. og:url and og:image need the real domain before launch-->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NoteSwap">
+    <meta property="og:title" content="Log In - NoteSwap">
+    <meta property="og:description" content="Log in to your NoteSwap account to download notes, track your uploads and manage your subscription.">
+    <meta property="og:image" content="assets/img/logo.png">
+    <meta name="twitter:card" content="summary">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
+
+    <!--Icons and slider-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.css" integrity="sha384-gAPqlBuTCdtVcYt9ocMOYWrnBZ4XSL6q+4eXqwNycOr4iFczhNKtnYhF3NEXJM51" crossorigin="anonymous" referrerpolicy="no-referrer">
+
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
     <div id="site-header"></div>
+
+    <main id="main">
 
     <!-- <section class="heading-link"> -->
         <!-- <h3>Login to your account</h3> -->
@@ -24,23 +43,31 @@
 <section class="login">
     <div class="log_in">
         <div class="login-box">
-            <form class="login-form active" action="">
+            <form class="login-form active" data-demo-form="Thanks. Sign in is not wired up yet on this demo." novalidate>
                 <div class="login-title">
                     <h1>Login</h1>
                 </div>
-                    <input type="email" placeholder="Email" class="box" required>
-                    <input type="password" placeholder="Password" class="box" required>
+
+                    <label for="login-email" class="sr-only">Email</label>
+                    <input type="email" id="login-email" name="email" placeholder="Email" class="box" autocomplete="email" required>
+                    <span class="field-error" data-error-for="login-email"></span>
+
+                    <label for="login-password" class="sr-only">Password</label>
+                    <input type="password" id="login-password" name="password" placeholder="Password" class="box" autocomplete="current-password" required>
+                    <span class="field-error" data-error-for="login-password"></span>
+
                 <div class="flex">
-                    <input type="checkbox" name="" id="remember-me">
+                    <input type="checkbox" name="remember" id="remember-me">
                     <label for="remember-me">Remember Me</label>
-                    <a href="recover-password.html">Forget Password ?</a>
+                    <a href="recover-password.html">Forgot Password?</a>
                 </div>
-                    <input type="submit" value="login now" class="btn log-btn">
+                    <button type="submit" class="btn log-btn">Login Now</button>
+                    <p class="form-message" role="status"></p>
 
                 <div class="sign-up-link">
                     <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
                 </div>
-            
+
             </form>
         </div>
     </div>
@@ -50,9 +77,11 @@
     <!--Main part-->
 
 
+    </main>
+
     <div id="site-footer"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.js" integrity="sha384-2UI1PfnXFjVMQ7/ZDEF70CR943oH3v6uZrFQGGqJYlvhh4g6z6uVktxYbOlAczav" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="assets/js/layout.js"></script>
     <script src="assets/js/main.js"></script>
 </body>

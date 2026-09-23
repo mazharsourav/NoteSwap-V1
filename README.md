@@ -8,6 +8,7 @@ in a browser, or use the VS Code **Live Server** extension (configured for port 
 ```
 .
 ├── index.html               Home / landing page
+├── 404.html                 Not-found page
 ├── about.html               About us + note providers + reviews
 ├── our-story.html           Team story page
 ├── notes.html               Note listing
@@ -29,6 +30,8 @@ in a browser, or use the VS Code **Live Server** extension (configured for port 
 ├── content/
 │   └── notes/automata/      Scanned note pages served by note.html
 │
+├── robots.txt               Crawler rules
+├── sitemap.xml              Page list (needs absolute URLs before launch)
 └── .vscode/settings.json    Live Server port
 ```
 
@@ -46,7 +49,7 @@ into every page. Each page carries only two placeholders:
     ...page content...
     <div id="site-footer"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.js" integrity="..." crossorigin="anonymous"></script>
     <script src="assets/js/layout.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
@@ -76,10 +79,21 @@ after the rest of the page. Acceptable for a mock; revisit if this goes to produ
 - **Page names** describe what the page *is*. A page titled "Sign-Up" is `signup.html`.
 - **HTML** uses 4-space indent, and each major block is wrapped in a matching comment pair:
   ```html
-  <!--Header-->
-  <header class="header"> ... </header>
-  <!--Header-->
+  <!--Subject-->
+  <section class="subjects"> ... </section>
+  <!--Subject-->
   ```
+- **Every page** has exactly one `<h1>`, section headings are `<h2>`, card headings are
+  `<h3>`. Page content sits inside `<main id="main">` so the skip link has a target.
+- **Forms** are real `<form>` elements. Every control has a `<label>` (use `.sr-only` when
+  the label should not be visible), and a `<span class="field-error" data-error-for="ID">`
+  for its validation message. Add `data-demo-form="message"` and `main.js` handles
+  validation and the demo response.
+- **Icons** are decorative, so they carry `aria-hidden="true"`. An icon-only link or
+  button needs an `aria-label` describing what it does.
+- **Images** carry `width`/`height` to stop the page jumping as they load, plus
+  `loading="lazy"` below the fold. `alt=""` is correct for decoration; describe the image
+  only when it carries information.
 - **CSS** uses the design tokens in `:root` (`--green`, `--black`, `--box-shadow`,
   `--border`, …) rather than raw hex values. Root font size is `62.5%`, so `1rem` = `10px`.
 - **Class naming** is a loose parent/child pattern: `.footer .box-container .box .link`.
@@ -89,28 +103,47 @@ after the rest of the page. Acceptable for a mock; revisit if this goes to produ
 Loaded from CDN in every page's `<head>`:
 
 - Font Awesome 6.6.0 (icons)
-- Swiper 11 (sliders)
-- Google Fonts — Nunito, Rubik (imported at the top of `style.css`)
+- Swiper 11.2.10 (sliders)
+- Google Fonts — Nunito, Rubik
+
+All three are pinned to an exact version and carry a Subresource Integrity hash, so the
+browser refuses the file if a CDN ever serves different bytes. **If you change a CDN
+version you must recompute its `integrity` hash**, or the asset will silently fail to
+load:
+
+```sh
+curl -s <url> | openssl dgst -sha384 -binary | openssl base64 -A
+```
+
+Fonts load via `<link>` with `preconnect`, not a CSS `@import`, because an `@import`
+blocks the stylesheet from being parsed until the font CSS arrives.
 
 ## Known gaps
 
-Pages referenced by links but not yet built:
+Everything below is deliberate for a v1 mock, not an oversight.
 
-- `course-details.html` — linked 3× from the Featured section on `index.html`
-- `membership.html` — linked from the Premium Membership teaser
-- `instructors.html` — linked from the "See More" button
+**No backend.** Login, signup, password recovery, checkout, the contact form and the
+footer subscribe box all validate in the browser and then report that this is a demo.
+Nothing is sent anywhere and no account or payment is created. `payment.html` carries a
+visible demo notice; do not enter a real card number.
 
-Images referenced but missing from `assets/img/`:
+**Social links point to `#`.** There are no real NoteSwap social accounts yet. The links
+carry proper `aria-label`s so screen readers announce them, but they go nowhere.
 
-- `teacher1.jpg`, `teacher2.jpg`, `teacher3.jpg` — instructor cards on `index.html`
-- `dev-backend.png`, `dev-frontend.png`, `dev-uiux.png` — team cards on `our-story.html`
-- `png/paypal.png`, `png/apple.png`, `png/google.png` — payment icons on `payment.html`
-  (the whole `png/` folder is absent)
+**Header and footer are injected by JavaScript.** Crawlers that do not run JS will not
+see them. Fine for a mock; revisit before production (see "Shared header and footer").
 
-Pages that exist but nothing links to: `pricing.html`, `payment.html`, `our-story.html`.
+**`og:url`, `og:image` and the sitemap need a real domain.** Canonical links and
+`sitemap.xml` currently use relative paths. Open Graph images must be absolute URLs to
+work, so link previews will not show an image until the domain is filled in.
 
-Images currently in `assets/img/` that no page uses: `bg.gif`, `book-stack.png`,
-`diary.svg`, `girl-graduation.svg`, `information-button.png`, `learning.svg`,
-`learning-desk.svg`, `make-it-rain.svg`, `mathematics-bro.svg`, `note-provider-man.jpg`,
-`note-provider-woman.png`, `number-1.svg`, `number-2.svg`, `online-transactions.svg`,
-`personal-finance.svg`.
+**Font Awesome loads in full** for about 20 icons. Subsetting needs a build step.
+
+**One stylesheet for every page.** `style.css` is about 2,700 lines. It has a table of
+contents and section banners, and 367 lines of dead rules were removed. Splitting it
+per page would cut what each page downloads, but at this size the saving is small and
+the risk of moving a rule into the wrong file is not. Worth doing if it keeps growing.
+
+**Unused images** still in `assets/img/`: `about-us.svg`, `bg.gif`, `book-stack.png`,
+`diary.svg`, `information-button.png`, `learning.svg`, `mathematics-bro.svg`,
+`number-1.svg`, `number-2.svg`, `online-transactions.svg`.

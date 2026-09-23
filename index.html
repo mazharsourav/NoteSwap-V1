@@ -2,19 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/img/logo.png" type="image/png">
-    <title>Home</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <title>NoteSwap - Share and Find Study Notes</title>
+    <meta name="description" content="Swap study notes with students at your university. Browse notes by subject, download what you need, and upload your own.">
+    <link rel="canonical" href="index.html">
+
+    <!--Link preview. og:url and og:image need the real domain before launch-->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NoteSwap">
+    <meta property="og:title" content="NoteSwap - Share and Find Study Notes">
+    <meta property="og:description" content="Swap study notes with students at your university. Browse notes by subject, download what you need, and upload your own.">
+    <meta property="og:image" content="assets/img/logo.png">
+    <meta name="twitter:card" content="summary">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
+
+    <!--Icons and slider-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.css" integrity="sha384-gAPqlBuTCdtVcYt9ocMOYWrnBZ4XSL6q+4eXqwNycOr4iFczhNKtnYhF3NEXJM51" crossorigin="anonymous" referrerpolicy="no-referrer">
+
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-
-<!-- Preloader -->
+<!--Preloader-->
 <div id="preloader" class="preloader">
     <div class="preloader-inner">
         <div class="preloader-icon">
@@ -23,44 +39,41 @@
         </div>
     </div>
 </div>
-<!-- /End Preloader -->
-
-
-
-
-
+<!--Preloader-->
 
     <div id="site-header"></div>
 
+    <main id="main">
+
+    <h1 class="sr-only">NoteSwap - share and find study notes</h1>
 
     <!--Home Part-->
     <section class="home">
         <div class="swiper home-slider">
             <div class="swiper-wrapper">
-                <section class="swiper-slide slide" style="background: url('assets/img/folded-books.jpg') no-repeat;">
+                <div class="swiper-slide slide" style="background-image: url('assets/img/folded-books.jpg');">
                     <div class="content">
-                        <h3>Best Notes You Will Find Here</h3>
+                        <h2>Best Notes You Will Find Here</h2>
                         <p>Share, exchange, and access notes easily. Simplify your study process with collaborative tools.</p>
-                        <a href="login.html" class="btn">Get Started</a>
+                        <a href="notes.html" class="btn">Browse Notes</a>
                     </div>
-                </section>
+                </div>
 
-                <section class="swiper-slide slide" style="background: url('assets/img/open-book.jpg') no-repeat;">
+                <div class="swiper-slide slide" style="background-image: url('assets/img/open-book.jpg');">
                     <div class="content">
-                        <h3>Best Notes You Will Find Here</h3>
-                        <p>Share, exchange, and access notes easily. Simplify your study process with collaborative tools.</p>
-                        <a href="login.html" class="btn">Get Started</a>
+                        <h2>Notes From Students Who Sat The Same Exam</h2>
+                        <p>Every note here was written by someone taking your course, at your university, for your syllabus.</p>
+                        <a href="about.html" class="btn">Meet The Providers</a>
                     </div>
-                </section>
+                </div>
 
-                <section class="swiper-slide slide" style="background: url('assets/img/single-open-book.jpg') no-repeat;">
+                <div class="swiper-slide slide" style="background-image: url('assets/img/single-open-book.jpg');">
                     <div class="content">
-                        <h3>Best Notes You Will Find Here</h3>
-                        <p>Share, exchange, and access notes easily. Simplify your study process with collaborative tools.</p>
-                        <a href="login.html" class="btn">Get Started</a>
-                        <a href="login.html" class="btn">Get Started</a>
+                        <h2>Upload Once, Help Every Junior After You</h2>
+                        <p>Share the notes you already wrote. Build a reputation, and get free access to everything others share.</p>
+                        <a href="signup.html" class="btn">Create An Account</a>
                     </div>
-                </section>
+                </div>
 
             </div>
             <div class="swiper-pagination"></div>
@@ -71,261 +84,228 @@
 
     <!--Subject-->
     <section class="subjects">
-        <h1 class="heading">Notes</h1>
+        <h2 class="heading">Notes By Subject</h2>
         <div class="box-container">
-            <div class="box"><a href="notes.html">
-                <img src="assets/img/computer-science.svg" alt="">
+
+            <a href="notes.html" class="box">
+                <img src="assets/img/computer-science.svg" alt="Computer science notes" width="160" height="100">
                 <h3>CSE</h3>
                 <p>All Semester</p>
             </a>
-            </div>
 
-            <div class="box">
-                <img src="assets/img/mathematics-amico.svg" alt="">
+            <a href="notes.html" class="box">
+                <img src="assets/img/mathematics-amico.svg" alt="Business administration notes" width="160" height="100">
                 <h3>BBA</h3>
                 <p>All Semester</p>
-            </div>
+            </a>
 
-            <div class="box">
-                <img src="assets/img/mathematics-rafiki.svg" alt="">
+            <a href="notes.html" class="box">
+                <img src="assets/img/chemistry.svg" alt="Pharmacy notes" width="160" height="100">
                 <h3>Pharmacy</h3>
                 <p>All Semester</p>
-            </div>
+            </a>
 
-            <div class="box">
-                <img src="assets/img/chemistry.svg" alt="">
+            <a href="notes.html" class="box">
+                <img src="assets/img/mathematics-rafiki.svg" alt="Civil engineering notes" width="160" height="100">
                 <h3>Civil</h3>
                 <p>All Semester</p>
-            </div>
+            </a>
 
-            <div class="box">
-                <img src="assets/img/english-teacher.svg" alt="">
+            <a href="notes.html" class="box">
+                <img src="assets/img/english-teacher.svg" alt="English notes" width="160" height="100">
                 <h3>English</h3>
                 <p>All Semester</p>
-            </div>
+            </a>
 
-            <div class="box">
-                <img src="assets/img/creative-team.svg" alt="">
+            <a href="notes.html" class="box">
+                <img src="assets/img/eee.svg" alt="Electrical engineering notes" width="160" height="100">
                 <h3>EEE</h3>
                 <p>All Semester</p>
-            </div>
+            </a>
 
-            <div class="box">
-                <img src="assets/img/creative-team.svg" alt="">
-                <h3>EEE</h3>
-                <p>All Semester</p>
-            </div>
-
-            <div class="box">
-                <img src="assets/img/creative-team.svg" alt="">
-                <h3>EEE</h3>
-                <p>All Semester</p>
-            </div>
-            
         </div>
     </section>
     <!--Subject-->
 
 
-<!-- Featured Courses Section -->
-<section class="featured-courses">
-    <h1 class="heading">Featured Notes</h1>
-    <div class="course-container">
-        <div class="course-box">
-            <img src="assets/img/about-us.svg" alt="Course Image">
-            <h3>Web Development</h3>
-            <p>Learn the latest technologies in web development and build interactive websites.</p>
-            <a href="course-details.html" class="btn">Learn More</a>
-        </div>
-        <div class="course-box">
-            <img src="" alt="Course Image">
-            <h3>Data Science</h3>
-            <p>Discover the world of data analysis, machine learning, and artificial intelligence.</p>
-            <a href="course-details.html" class="btn">Learn More</a>
-        </div>
-        <div class="course-box">
-            <img src="" alt="Course Image">
-            <h3>Digital Marketing</h3>
-            <p>Understand the principles of online marketing and boost your brand visibility.</p>
-            <a href="course-details.html" class="btn">Learn More</a>
-        </div>
-    </div>
-</section>
-<!-- End Featured Courses Section -->
-
-
-
-
-
-<!-- Achievement Section -->
-<section class="achievement">
-    <h2 class="heading">Our Achievements</h2>
-    <div class="achievement-container">
-        <div class="achievement-item">
-            <div class="icon">
-                <i class="fas fa-graduation-cap"></i>
+    <!--Featured Notes-->
+    <section class="featured-notes">
+        <h2 class="heading">Featured Notes</h2>
+        <div class="note-container">
+            <div class="note-box">
+                <img src="assets/img/computer-science.svg" alt="" width="120" height="90" loading="lazy">
+                <h3>Theory of Computation</h3>
+                <p>Deterministic and non-deterministic finite automata, with worked examples and diagrams.</p>
+                <a href="note.html" class="btn">Read Notes</a>
             </div>
-            <h3 class="achievement-number">250+</h3>
-            <p>Paid Students</p>
-        </div>
-
-        <div class="achievement-item">
-            <div class="icon">
-                <i class="fas fa-book-reader"></i>
+            <div class="note-box">
+                <img src="assets/img/notebook.svg" alt="" width="120" height="90" loading="lazy">
+                <h3>System Analysis and Design</h3>
+                <p>The system analysis life cycle, waterfall and agile methodologies, and requirement gathering.</p>
+                <a href="notes.html" class="btn">Read Notes</a>
             </div>
-            <h3 class="achievement-number">500+</h3>
-            <p>Notes Shared</p>
-        </div>
-
-        <div class="achievement-item">
-            <div class="icon">
-                <i class="fas fa-trophy"></i>
+            <div class="note-box">
+                <img src="assets/img/eee.svg" alt="" width="120" height="90" loading="lazy">
+                <h3>Architecture of 8086</h3>
+                <p>Block diagram of the 8086, flag registers, physical address calculation and control registers.</p>
+                <a href="notes.html" class="btn">Read Notes</a>
             </div>
-            <h3 class="achievement-number">50+</h3>
-            <p>Toatl Provider</p>
         </div>
+    </section>
+    <!--Featured Notes-->
 
-        <div class="achievement-item">
-            <div class="icon">
-                <i class="fas fa-users"></i>
+
+    <!--Achievement-->
+    <section class="achievement">
+        <h2 class="heading">Our Achievements</h2>
+        <div class="achievement-container">
+            <div class="achievement-item">
+                <div class="icon">
+                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                </div>
+                <h3 class="achievement-number">250+</h3>
+                <p>Registered Students</p>
             </div>
-            <h3 class="achievement-number">100%</h3>
-            <p>Satisfaction</p>
+
+            <div class="achievement-item">
+                <div class="icon">
+                    <i class="fas fa-book-reader" aria-hidden="true"></i>
+                </div>
+                <h3 class="achievement-number">500+</h3>
+                <p>Notes Shared</p>
+            </div>
+
+            <div class="achievement-item">
+                <div class="icon">
+                    <i class="fas fa-trophy" aria-hidden="true"></i>
+                </div>
+                <h3 class="achievement-number">50+</h3>
+                <p>Note Providers</p>
+            </div>
+
+            <div class="achievement-item">
+                <div class="icon">
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                </div>
+                <h3 class="achievement-number">6</h3>
+                <p>Universities Covered</p>
+            </div>
         </div>
-    </div>
-</section>
-<!-- End Achievement Section -->
+    </section>
+    <!--Achievement-->
 
 
+    <!--Note Providers-->
+    <section class="providers">
+        <h2 class="heading">Meet Our Note Providers</h2>
+        <div class="providers-container">
 
-<!-- Instructors Section -->
-<section class="instructors">
-    <h2 class="heading">Meet Our Expert Instructors</h2>
-    <div class="instructors-container">
-        <!-- Instructor 1 -->
-        <div class="single-team">
-            <div class="image">
-                <img src="assets/img/teacher1.jpg" alt="Instructor 1">
-            </div>
-            <div class="info-head">
-                <div class="info-box">
-                    <span class="designation">Math Instructor</span>
-                    <h3 class="name"><a href="#">John Doe</a></h3>
-                    <p>Helping students excel in mathematics with innovative teaching methods.</p>
-                    <div class="social">
-                        <ul>
-                            <li><a href="#" class="fab fa-facebook-f"></a></li>
-                            <li><a href="#" class="fab fa-twitter"></a></li>
-                            <li><a href="#" class="fab fa-linkedin"></a></li>
-                            <li><a href="#" class="fab fa-instagram"></a></li>
-                        </ul>
+            <div class="single-team">
+                <div class="image">
+                    <img src="assets/img/note-provider.svg" alt="" width="200" height="200" loading="lazy">
+                </div>
+                <div class="info-head">
+                    <div class="info-box">
+                        <span class="designation">Computer Science, 7th Semester</span>
+                        <h3 class="name">Mazharul Islam Sourav</h3>
+                        <p>Shares automata, micro-processor and system analysis notes for University of Asia Pacific.</p>
+                        <div class="social">
+                            <ul>
+                                <li><a href="#" aria-label="Mazharul Islam Sourav on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                                <li><a href="#" aria-label="Mazharul Islam Sourav on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Instructor 2 -->
-        <div class="single-team">
-            <div class="image">
-                <img src="assets/img/teacher2.jpg" alt="Instructor 2">
-            </div>
-            <div class="info-head">
-                <div class="info-box">
-                    <span class="designation">Data Science Specialist</span>
-                    <h3 class="name"><a href="#">Jane Smith</a></h3>
-                    <p>Passionate about transforming data into valuable insights for businesses.</p>
-                    <div class="social">
-                        <ul>
-                            <li><a href="#" class="fab fa-facebook-f"></a></li>
-                            <li><a href="#" class="fab fa-twitter"></a></li>
-                            <li><a href="#" class="fab fa-linkedin"></a></li>
-                            <li><a href="#" class="fab fa-instagram"></a></li>
-                        </ul>
+            <div class="single-team">
+                <div class="image">
+                    <img src="assets/img/note-provider-man.jpg" alt="" width="200" height="200" loading="lazy">
+                </div>
+                <div class="info-head">
+                    <div class="info-box">
+                        <span class="designation">Computer Science, 6th Semester</span>
+                        <h3 class="name">Faisal Hossain</h3>
+                        <p>Covers data structures, algorithms and database systems with fully worked past papers.</p>
+                        <div class="social">
+                            <ul>
+                                <li><a href="#" aria-label="Faisal Hossain on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                                <li><a href="#" aria-label="Faisal Hossain on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Instructor 3 -->
-        <div class="single-team">
-            <div class="image">
-                <img src="assets/img/teacher3.jpg" alt="Instructor 3">
-            </div>
-            <div class="info-head">
-                <div class="info-box">
-                    <span class="designation">Marketing Expert</span>
-                    <h3 class="name"><a href="#">Mark Johnson</a></h3>
-                    <p>Equipping businesses with the latest strategies to enhance brand visibility.</p>
-                    <div class="social">
-                        <ul>
-                            <li><a href="#" class="fab fa-facebook-f"></a></li>
-                            <li><a href="#" class="fab fa-twitter"></a></li>
-                            <li><a href="#" class="fab fa-linkedin"></a></li>
-                            <li><a href="#" class="fab fa-instagram"></a></li>
-                        </ul>
+            <div class="single-team">
+                <div class="image">
+                    <img src="assets/img/note-provider-woman.png" alt="" width="200" height="200" loading="lazy">
+                </div>
+                <div class="info-head">
+                    <div class="info-box">
+                        <span class="designation">Pharmacy, 5th Semester</span>
+                        <h3 class="name">Shahjeen Iram Mehuli</h3>
+                        <p>Shares pharmacology and organic chemistry notes, including lab write-ups and diagrams.</p>
+                        <div class="social">
+                            <ul>
+                                <li><a href="#" aria-label="Shahjeen Iram Mehuli on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                                <li><a href="#" aria-label="Shahjeen Iram Mehuli on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Instructor 4 -->
-        <div class="single-team">
-            <div class="image">
-                <img src="assets/img/college-project.svg" alt="Instructor 4">
-            </div>
-            <div class="info-head">
-                <div class="info-box">
-                    <span class="designation">Business Consultant</span>
-                    <h3 class="name"><a href="#">Emily Taylor</a></h3>
-                    <p>Helping businesses achieve growth and success through strategic planning.</p>
-                    <div class="social">
-                        <ul>
-                            <li><a href="#" class="fab fa-facebook-f"></a></li>
-                            <li><a href="#" class="fab fa-twitter"></a></li>
-                            <li><a href="#" class="fab fa-linkedin"></a></li>
-                            <li><a href="#" class="fab fa-instagram"></a></li>
-                        </ul>
+            <div class="single-team">
+                <div class="image">
+                    <img src="assets/img/college-project.svg" alt="" width="200" height="200" loading="lazy">
+                </div>
+                <div class="info-head">
+                    <div class="info-box">
+                        <span class="designation">Business Administration, 4th Semester</span>
+                        <h3 class="name">Mashrar Preeonti</h3>
+                        <p>Shares accounting, marketing and business statistics notes with summary sheets for exams.</p>
+                        <div class="social">
+                            <ul>
+                                <li><a href="#" aria-label="Mashrar Preeonti on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                                <li><a href="#" aria-label="Mashrar Preeonti on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
-    </div>
 
-    <!-- See More Button -->
-    <div class="see-more">
-        <a href="instructors.html" class="btn">See More</a>
-    </div>
-</section>
-
-<!-- End Instructors Section -->
-
-
-
-
-<!-- Premium Membership Teaser -->
-<section class="premium-teaser">
-    <div class="container">
-        <div class="premium-content">
-            <h2><i class="fas fa-crown"></i> Premium Membership</h2>
-            <p>Unlock exclusive access to high-quality notes, early releases, and premium features to supercharge your academic journey.</p>
-            <a href="membership.html" class="btn">Upgrade Now</a>
+        <!--See More Button-->
+        <div class="see-more">
+            <a href="about.html" class="btn">See All Providers</a>
         </div>
-        <div class="premium-icon">
-            <i class="fas fa-star" style="font-size: 10rem; color: var(--green);"></i>
+    </section>
+    <!--Note Providers-->
+
+
+    <!--Premium Membership Teaser-->
+    <section class="premium-teaser">
+        <div class="container">
+            <div class="premium-content">
+                <h2><i class="fas fa-crown" aria-hidden="true"></i> Premium Membership</h2>
+                <p>Unlock exclusive access to high-quality notes, early releases, and premium features to supercharge your academic journey.</p>
+                <a href="pricing.html" class="btn">See Plans</a>
+            </div>
+            <div class="premium-icon">
+                <i class="fas fa-star" aria-hidden="true"></i>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+    <!--Premium Membership Teaser-->
 
-
-
-
-
-
-
+    </main>
 
     <div id="site-footer"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.js" integrity="sha384-2UI1PfnXFjVMQ7/ZDEF70CR943oH3v6uZrFQGGqJYlvhh4g6z6uVktxYbOlAczav" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="assets/js/layout.js"></script>
     <script src="assets/js/main.js"></script>
 </body>

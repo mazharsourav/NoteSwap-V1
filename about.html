@@ -2,46 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/img/logo.png" type="image/png">
-    <title>About</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <title>About - NoteSwap</title>
+    <meta name="description" content="NoteSwap is a student-run note exchange. Meet the providers sharing their notes and read what other students say.">
+    <link rel="canonical" href="about.html">
+
+    <!--Link preview. og:url and og:image need the real domain before launch-->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NoteSwap">
+    <meta property="og:title" content="About - NoteSwap">
+    <meta property="og:description" content="NoteSwap is a student-run note exchange. Meet the providers sharing their notes and read what other students say.">
+    <meta property="og:image" content="assets/img/logo.png">
+    <meta name="twitter:card" content="summary">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
+
+    <!--Icons and slider-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.css" integrity="sha384-gAPqlBuTCdtVcYt9ocMOYWrnBZ4XSL6q+4eXqwNycOr4iFczhNKtnYhF3NEXJM51" crossorigin="anonymous" referrerpolicy="no-referrer">
+
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div id="site-header"></div>
 
-    <!--About Part-->
+    <main id="main">
+
     <section class="heading-link">
-        <!-- <h3>About Us</h3> -->
+        <h1>About Us</h1>
         <p><a href="index.html">Home</a> / About </p>
     </section>
-    
+
+    <!--About Part-->
     <section class="about">
         <div class="image">
-            <img src="assets/img/notebook.svg" alt="">
+            <img src="assets/img/notebook.svg" alt="" width="500" height="400">
         </div>
         <div class="content">
-            <h3 class="about-tittle">We have best notes for you</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis eaque, harum vel doloremque debitis sit.</p>
+            <h2 class="about-tittle">We have best notes for you</h2>
+            <p>NoteSwap started because finding good notes before an exam should not depend on knowing the right senior.
+               Every note here was written by a student who sat the same course, at the same university, for the same syllabus.</p>
             <div class="icons-container">
                 <div class="icons">
-                    <img src="assets/img/dictionary.svg" alt="">
+                    <img src="assets/img/dictionary.svg" alt="" width="80" height="50" loading="lazy">
                     <h3>765+</h3>
                     <span>Notes</span>
                 </div>
                 <div class="icons">
-                    <img src="assets/img/college-project.svg" alt="">
+                    <img src="assets/img/college-project.svg" alt="" width="80" height="50" loading="lazy">
                     <h3>1000+</h3>
                     <span>Students</span>
                 </div>
                 <div class="icons">
-                    <img src="assets/img/dictionary.svg" alt="">
+                    <img src="assets/img/girl-graduation.svg" alt="" width="80" height="50" loading="lazy">
                     <h3>10+</h3>
-                    <span>Note Provider</span>
+                    <span>Note Providers</span>
                 </div>
             </div>
         </div>
@@ -50,98 +70,92 @@
 
 
     <!--Note provider-->
-    <section class="techers">
-        <h1 class="heading">Note Provider</h1>
+    <section class="teachers">
+        <h2 class="heading">Note Providers</h2>
         <div class="swiper teachers-slider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide slide">
                     <div class="image">
-                        <img src="assets/img/note-provider.svg" alt="">
+                        <img src="assets/img/note-provider.svg" alt="" width="300" height="300" loading="lazy">
                         <div class="share">
-                            <a href="#" class="fab fa-facebook-f"></a>
-                            <a href="#" class="fab fa-instagram"></a>
-                            <a href="#" class="fab fa-twitter"></a>
-                            <a href="#" class="fab fa-linkedin"></a>
+                            <a href="#" aria-label="Mazharul Islam Sourav on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="Mazharul Islam Sourav on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="Mazharul Islam Sourav on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                     </div>
                     <div class="content">
                         <h3>Mazharul Islam Sourav</h3>
-                        <span>Univesity Of Asia Pacific</span>
+                        <span>University of Asia Pacific &middot; Computer Science</span>
                     </div>
                 </div>
                 <div class="swiper-slide slide">
                     <div class="image">
-                        <img src="assets/img/note-provider.svg" alt="">
+                        <img src="assets/img/note-provider.svg" alt="" width="300" height="300" loading="lazy">
                         <div class="share">
-                            <a href="#" class="fab fa-facebook-f"></a>
-                            <a href="#" class="fab fa-instagram"></a>
-                            <a href="#" class="fab fa-twitter"></a>
-                            <a href="#" class="fab fa-linkedin"></a>
+                            <a href="#" aria-label="Faisal Hossain on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="Faisal Hossain on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="Faisal Hossain on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                     </div>
                     <div class="content">
                         <h3>Faisal Hossain</h3>
-                        <span>Univesity Of Asia Pacific</span>
+                        <span>University of Asia Pacific &middot; Computer Science</span>
                     </div>
                 </div>
                 <div class="swiper-slide slide">
                     <div class="image">
-                        <img src="assets/img/note-provider.svg" alt="">
+                        <img src="assets/img/note-provider.svg" alt="" width="300" height="300" loading="lazy">
                         <div class="share">
-                            <a href="#" class="fab fa-facebook-f"></a>
-                            <a href="#" class="fab fa-instagram"></a>
-                            <a href="#" class="fab fa-twitter"></a>
-                            <a href="#" class="fab fa-linkedin"></a>
+                            <a href="#" aria-label="Sharif Md Yousuf on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="Sharif Md Yousuf on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="Sharif Md Yousuf on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                     </div>
                     <div class="content">
-                        <h3>Sharif Md yousuf</h3>
-                        <span>Univesity Of Asia Pacific</span>
+                        <h3>Sharif Md Yousuf</h3>
+                        <span>University of Asia Pacific &middot; Electrical Engineering</span>
                     </div>
                 </div>
                 <div class="swiper-slide slide">
                     <div class="image">
-                        <img src="assets/img/note-provider.svg" alt="">
+                        <img src="assets/img/note-provider.svg" alt="" width="300" height="300" loading="lazy">
                         <div class="share">
-                            <a href="#" class="fab fa-facebook-f"></a>
-                            <a href="#" class="fab fa-instagram"></a>
-                            <a href="#" class="fab fa-twitter"></a>
-                            <a href="#" class="fab fa-linkedin"></a>
+                            <a href="#" aria-label="Noor Mohammad Priom on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="Noor Mohammad Priom on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="Noor Mohammad Priom on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                     </div>
                     <div class="content">
                         <h3>Noor Mohammad Priom</h3>
-                        <span>Univesity Of Asia Pacific</span>
+                        <span>Brac University &middot; Business Administration</span>
                     </div>
                 </div>
                 <div class="swiper-slide slide">
                     <div class="image">
-                        <img src="assets/img/note-provider.svg" alt="">
+                        <img src="assets/img/note-provider.svg" alt="" width="300" height="300" loading="lazy">
                         <div class="share">
-                            <a href="#" class="fab fa-facebook-f"></a>
-                            <a href="#" class="fab fa-instagram"></a>
-                            <a href="#" class="fab fa-twitter"></a>
-                            <a href="#" class="fab fa-linkedin"></a>
+                            <a href="#" aria-label="Shahjeen Iram Mehuli on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="Shahjeen Iram Mehuli on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="Shahjeen Iram Mehuli on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                     </div>
                     <div class="content">
                         <h3>Shahjeen Iram Mehuli</h3>
-                        <span>Univesity Of Asia Pacific</span>
+                        <span>North South University &middot; Pharmacy</span>
                     </div>
                 </div>
                 <div class="swiper-slide slide">
                     <div class="image">
-                        <img src="assets/img/note-provider.svg" alt="">
+                        <img src="assets/img/note-provider.svg" alt="" width="300" height="300" loading="lazy">
                         <div class="share">
-                            <a href="#" class="fab fa-facebook-f"></a>
-                            <a href="#" class="fab fa-instagram"></a>
-                            <a href="#" class="fab fa-twitter"></a>
-                            <a href="#" class="fab fa-linkedin"></a>
+                            <a href="#" aria-label="Mashrar Preeonti on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="Mashrar Preeonti on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="#" aria-label="Mashrar Preeonti on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                     </div>
                     <div class="content">
                         <h3>Mashrar Preeonti</h3>
-                        <span>Univesity Of Asia Pacific</span>
+                        <span>University of Asia Pacific &middot; Business Administration</span>
                     </div>
                 </div>
             </div>
@@ -151,99 +165,109 @@
 
 
     <!--Student Review-->
-<section class="reviews">
-    <h1 class="heading">Student's Review</h1>
-    <div class="swiper reviews-slider">
-        <div class="swiper-wrapper">
+    <section class="reviews">
+        <h2 class="heading">Student Reviews</h2>
+        <div class="swiper reviews-slider">
+            <div class="swiper-wrapper">
+
             <div class="swiper-slide slide">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, laborum?</p>
-                <img src="assets/img/cat-astronaut.svg" alt="">
+                <p>I found organic chemistry notes here two days before my exam. Whoever scanned them wrote clearer than my own lecturer.</p>
+                <img src="assets/img/cat-astronaut.svg" alt="" width="100" height="100" loading="lazy">
                 <h3>Akhi</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+                <span class="reviewer-course">Pharmacy, 5th semester</span>
+                <div class="stars" role="img" aria-label="5 out of 5 stars">
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
                 </div>
             </div>
 
             <div class="swiper-slide slide">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, laborum?</p>
-                <img src="assets/img/cat-astronaut.svg" alt="">
+                <p>The automata notes had every worked example our teacher skipped. I stopped buying photocopies from the shop downstairs.</p>
+                <img src="assets/img/cat-astronaut.svg" alt="" width="100" height="100" loading="lazy">
                 <h3>Nusaiba</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+                <span class="reviewer-course">Computer Science, 3rd semester</span>
+                <div class="stars" role="img" aria-label="5 out of 5 stars">
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
                 </div>
             </div>
 
             <div class="swiper-slide slide">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, laborum?</p>
-                <img src="assets/img/cat-astronaut.svg" alt="">
+                <p>Good coverage for core subjects. Still thin on the electives, but I uploaded mine so that should improve.</p>
+                <img src="assets/img/cat-astronaut.svg" alt="" width="100" height="100" loading="lazy">
                 <h3>Mrinmoy</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+                <span class="reviewer-course">Civil Engineering, 6th semester</span>
+                <div class="stars" role="img" aria-label="4 out of 5 stars">
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star-half-alt" aria-hidden="true"></i>
                 </div>
             </div>
 
             <div class="swiper-slide slide">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, laborum?</p>
-                <img src="assets/img/cat-astronaut.svg" alt="">
+                <p>Uploading my accounting notes took five minutes and three people messaged me to say thanks. That felt good.</p>
+                <img src="assets/img/cat-astronaut.svg" alt="" width="100" height="100" loading="lazy">
                 <h3>Sanjida</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+                <span class="reviewer-course">Business Administration, 2nd semester</span>
+                <div class="stars" role="img" aria-label="5 out of 5 stars">
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
                 </div>
             </div>
 
             <div class="swiper-slide slide">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, laborum?</p>
-                <img src="assets/img/cat-astronaut.svg" alt="">
+                <p>Useful for essay structure and citation styles. I would like more literature notes, but what is here is solid.</p>
+                <img src="assets/img/cat-astronaut.svg" alt="" width="100" height="100" loading="lazy">
                 <h3>Sharifa</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+                <span class="reviewer-course">English, 4th semester</span>
+                <div class="stars" role="img" aria-label="4 out of 5 stars">
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star-half-alt" aria-hidden="true"></i>
                 </div>
             </div>
 
             <div class="swiper-slide slide">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur, laborum?</p>
-                <img src="assets/img/cat-astronaut.svg" alt="">
+                <p>Searching by subject and semester actually works. I found my whole database syllabus in one afternoon.</p>
+                <img src="assets/img/cat-astronaut.svg" alt="" width="100" height="100" loading="lazy">
                 <h3>Labonno</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+                <span class="reviewer-course">Computer Science, 7th semester</span>
+                <div class="stars" role="img" aria-label="5 out of 5 stars">
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
+                    <i class="fas fa-star" aria-hidden="true"></i>
                 </div>
+            </div>
+
             </div>
         </div>
-    </div>
-</section>
+    </section>
     <!--Student Review-->
 
 
 
 
 
+    </main>
+
     <div id="site-footer"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.js" integrity="sha384-2UI1PfnXFjVMQ7/ZDEF70CR943oH3v6uZrFQGGqJYlvhh4g6z6uVktxYbOlAczav" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="assets/js/layout.js"></script>
     <script src="assets/js/main.js"></script>
 </body>

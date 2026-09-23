@@ -1,4 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+/*=====================================================
+  NoteSwap stylesheet
+
+  One file, loaded by every page. Sections below are in
+  cascade order - moving a block can change how it renders.
+
+  Design tokens are in :root. Root font size is 62.5%,
+  so 1rem = 10px.
+
+  CONTENTS
+    Design tokens and reset
+    Shared layout and components
+    Header and navigation
+    Home - hero slider, subjects, featured notes,
+           achievements, note providers, premium teaser
+    About - intro, providers slider, reviews slider
+    Notes - listing
+    Note page - scanned pages
+    Contact - tiles, message form, FAQ accordion
+    Auth - login, signup, password recovery
+    Pricing - plan cards
+    Payment - checkout form
+    Terms page
+    Our story page
+    Footer
+    Preloader
+    404 page
+    Accessibility and safety helpers
+=====================================================*/
+
+/*=====================================================
+  Design tokens and reset
+=====================================================*/
 
 :root {
     --green: #0eb582;
@@ -16,10 +48,30 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: none;
     border: none;
     text-decoration: none;
+}
+
+/* Transition only the things that actually animate, instead of every element. */
+a,
+button,
+input,
+textarea,
+select,
+.btn,
+.box,
+.note-box,
+.single-team,
+.achievement-item,
+.header .icons a,
+.header .icons button {
     transition: all 0.2s linear;
+}
+
+/* Visible keyboard focus. The * rule above used to remove this everywhere. */
+:focus-visible {
+    outline: 0.3rem solid var(--green);
+    outline-offset: 0.2rem;
 }
 
 .grid {
@@ -56,6 +108,11 @@ html {
 ::-webkit-scrollbar-thumb {
     background: var(--green);
 }
+
+
+/*=====================================================
+  Shared layout and components
+=====================================================*/
 
 section{
     padding: 5rem 10%;
@@ -113,6 +170,11 @@ section{
     color: var(--light-white);
 }
 
+
+/*=====================================================
+  Header and navigation
+=====================================================*/
+
 .header {
     position: sticky;
     top: 0;
@@ -149,6 +211,7 @@ section{
     font-size: 4rem;
     cursor: pointer;
     color: var(--black);
+    background: none;
     display: none;
 }
 
@@ -172,20 +235,28 @@ section{
     font-weight: bolder;
 }
 
-.header .icons div {
+.header .icons a,
+.header .icons button {
     cursor: pointer;
     font-size: 2rem;
     margin-left: 1.5rem;
     color: var(--black);
+    background: none;
 }
 
-.header .icons div:hover {
+.header .icons a:hover,
+.header .icons button:hover {
     color: var(--green);
 }
 
 #menu-btn {
     display: none;
 }
+
+
+/*=====================================================
+  Home - hero slider
+=====================================================*/
 
 .home{
     padding: 0;
@@ -195,7 +266,7 @@ section{
     display: flex;
     align-items: center;
     height: 60rem;
-    background-color: cover !important;
+    background-size: cover !important;
     background-position: center !important;
 }
 
@@ -225,6 +296,11 @@ section{
 .swiper-pagination-bullet-active{
     background: var(--green);
 }
+
+
+/*=====================================================
+  Home - subjects grid
+=====================================================*/
 
 .subjects .box-container{
     display: grid;
@@ -274,6 +350,11 @@ section{
     line-height: 2;
     color: var(--light-color);
 }
+
+
+/*=====================================================
+  About - intro
+=====================================================*/
 
 .about{
     display: flex;
@@ -340,31 +421,36 @@ section{
     color: var(--light-color);
 }
 
-.techers .slide{
+
+/*=====================================================
+  About - note providers slider
+=====================================================*/
+
+.teachers .slide{
     text-align: center;
 }
 
-.techers .slide:hover .image img {
+.teachers .slide:hover .image img {
     background: var(--green);
 }
 
-.techers .slide:hover .image .share {
+.teachers .slide:hover .image .share {
     bottom: 0;
 }
 
-.techers .slide .image{
+.teachers .slide .image{
     position: relative;
     overflow: hidden;
 }
 
-.techers .slide .image img{
+.teachers .slide .image img{
     background: var(--light-green);
     width: 100%;
     height: auto;
     object-fit: cover;
 }
 
-.techers .slide .image .share{
+.teachers .slide .image .share{
     position: absolute;
     bottom: -10;
     left: 0;
@@ -373,35 +459,40 @@ section{
     padding: 2rem;
 }
 
-.techers .slide .image .share a{
+.teachers .slide .image .share a{
     font-size: 3rem;
     margin: 0 1rem;
     color: var(--white);
 }
 
-.techers .slide .image .share a:hover{
+.teachers .slide .image .share a:hover{
     color: var(--green);
 }
 
-.techers .slide .content{
+.teachers .slide .content{
     display: flex;
     padding-top: 1rem;
     align-items: center;
     justify-content: space-between;
 }
 
-.techers .slide .content h3{
+.teachers .slide .content h3{
     font-size: var(--title-size, 2rem);
     text-transform: capitalize;
     margin-left:1rem;
     color: var(--black);
 }
 
-.techers .slide .content h3 span{
+.teachers .slide .content h3 span{
     font-size: var(--graph-size, 1.5rem);
     line-height: 2;
     color: var(--light-color);
 }
+
+
+/*=====================================================
+  About - student reviews slider
+=====================================================*/
 
 .reviews .slide{
     text-align: center;
@@ -448,6 +539,11 @@ section{
     font-size: 1.2rem;
     color: var(--green);
 }
+
+
+/*=====================================================
+  Notes - listing
+=====================================================*/
 
 .courses .box-container {
     display: grid;
@@ -540,6 +636,11 @@ section{
     text-align: center;
 }
 
+
+/*=====================================================
+  Contact - tiles and message form
+=====================================================*/
+
 .contact .icon-container{
     margin-bottom: 3rem;
     display: grid;
@@ -579,7 +680,6 @@ section{
 }
 
 
-
 .contact .row{
     display: flex;
     align-items: center;
@@ -595,20 +695,20 @@ section{
     width: 100%;
 }
 
-.contact .row .hudai{
+.contact .row .message-form{
     flex: 1 1 40rem;
     border: var(--border);
     padding: 2rem;
 }
 
-.contact .row .hudai h3{
+.contact .row .message-form h3{
     font-size: var(--title-size, 2.5rem);
     text-transform: capitalize;
     color: var(--black);
     padding-bottom: 1rem;
 }
 
-.contact .row .hudai .box{
+.contact .row .message-form .box{
     width: 100%;
     padding: 1.2rem 1.4rem;
     border: var(--border);
@@ -616,19 +716,24 @@ section{
     margin: .7rem 0;
 }
 
-.contact .row .hudai .box:focus{
+.contact .row .message-form .box:focus{
     background: var(--light-green);
     color: var(--black);
 }
 
-.contact .row .hudai .box::placeholder{
+.contact .row .message-form .box::placeholder{
     color: var(--light-color);
 }
 
-.contact .row .hudai textarea{
+.contact .row .message-form textarea{
     height: 15rem;
     resize: none;
 }
+
+
+/*=====================================================
+  Contact - FAQ accordion
+=====================================================*/
 
 .faq .accordion-container{
     display: flex;
@@ -690,255 +795,15 @@ section{
 }
 
 
-
-/*For now*/
-.signup-wrapper {
-    display: flex;              
-    justify-content: center;     /* Center items horizontally */
-    align-items: center;
-    background-color: #fff;
-    border-radius: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-    position: relative;
-    overflow: hidden;
-    width: 768px;
-    max-width: 100%;
-    min-height: 480px;
-    margin: 0 auto; /* Center the wrapper horizontally */
-    z-index: 1;
-}
-
-.signup-wrapper p {
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.3px;
-    margin: 20px 0;
-}
-
-.signup-wrapper span {
-    font-size: 12px;
-}
-
-.signup-wrapper a {
-    color: #333;
-    font-size: 13px;
-    text-decoration: none;
-    margin: 15px 0 10px;
-}
-
-.signup-wrapper button {
-    background-color: #0eb582;
-    color: #fff;
-    font-size: 12px;
-    padding: 10px 45px;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-top: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.signup-wrapper button.hidden {
-    background-color: transparent;
-    border-color: #fff;
-}
-
-.signup-wrapper form {
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    height: 100%;
-    border: none; /* Ensure there is no border */
-}
-
-.signup-wrapper input {
-    background-color: #eee;
-    border: none;
-    margin: 8px 0;
-    padding: 10px 15px;
-    font-size: 13px;
-    border-radius: 8px;
-    width: 100%;
-    outline: none;
-}
-
-.form-wrapper {
-    display: flex;
-    position: absolute;
-    top: 0;
-    height: 100%;
-    transition: all 0.6s ease-in-out;
-}
-
-.sign-in {
-    left: 0;
-    width: 50%;
-    z-index: 2;
-}
-
-.signup-wrapper.active .sign-in {
-    transform: translateX(100%);
-}
-
-.sign-up {
-    left: 0;
-    width: 50%;
-    opacity: 0;
-    z-index: 1;
-}
-
-.signup-wrapper.active .sign-up {
-    transform: translateX(100%);
-    opacity: 1;
-    z-index: 5;
-    animation: move 0.6s;
-}
-
-@keyframes move {
-    0%, 49.99% {
-        opacity: 0;
-        z-index: 1;
-    }
-    50%, 100% {
-        opacity: 1;
-        z-index: 5;
-    }
-}
-
-.social-icons {
-    margin: 20px 0;
-}
-
-.social-icons a {
-    border: 1px solid #ccc;
-    border-radius: 20%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 3px;
-    width: 40px;
-    height: 40px;
-}
-
-.toggle-wrapper {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    transition: all 0.6s ease-in-out;
-    border-radius: 150px 0 0 100px;
-    z-index: 1000;
-}
-.signup-wrapper button:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
-}
-
-
-.signup-wrapper button {
-    transition: transform 0.3s ease-in-out;
-}
-
-.signup-wrapper.active .toggle-wrapper {
-    transform: translateX(-100%);
-    border-radius: 0 150px 100px 0;
-}
-
-.toggle {
-    background-color: #512da8;
-    height: 100%;
-    background: linear-gradient(to right, #1fc492, #0eb582);
-    color: #fff;
-    position: relative;
-    left: -100%;
-    height: 100%;
-    width: 200%;
-    transform: translateX(0);
-    transition: all 0.6s ease-in-out;
-}
-
-.signup-wrapper.active .toggle {
-    transform: translateX(50%);
-}
-
-.toggle-panel {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 30px;
-    text-align: center;
-    top: 0;
-    transform: translateX(0);
-    transition: all 0.6s ease-in-out;
-}
-
-.toggle-left {
-    transform: translateX(-200%);
-}
-
-.signup-wrapper.active .toggle-left {
-    transform: translateX(0);
-}
-
-.toggle-right {
-    right: 0;
-    transform: translateX(0);
-}
-
-.signup-wrapper.active .toggle-right {
-    transform: translateX(200%);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .signup-wrapper {
-        width: 100%;
-        min-height: auto;
-        padding: 20px;
-    }
-
-    .signup-wrapper form {
-        padding: 10px;
-    }
-
-    .toggle-panel {
-        padding: 10px;
-        text-align: center;
-    }
-
-    .form-wrapper {
-        width: 100%;
-        padding: 20px;
-    }
-
-    .toggle-wrapper {
-        width: 100%;
-        left: 0;
-        border-radius: 0;
-    }
-}
-/*For now*/
-
-
-
-
-
 /* notes page */
 
 
 /* Background Section */
+
+/*=====================================================
+  Note page - scanned pages
+=====================================================*/
+
 .background-container {
     position: relative;
     width: 100%;
@@ -1075,22 +940,13 @@ section{
 /* notes page end */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*=====================================================
+  Footer
+=====================================================*/
 
 .footer {
     background: var(--light-green);
+    padding: 5rem 10%; /* was inherited from section{} before it became <footer> */
 }
 
 .footer .box-container {
@@ -1187,10 +1043,6 @@ section{
 }
 
 
-
-
-
-
 @media (max-width: 1200px) {
     .header {
         padding: 2.5rem 5%;
@@ -1247,9 +1099,6 @@ section{
         font-size: 3rem;
     }
 
-    .home .slide .scontent h3{
-        font-size: 3rem;
-    }
 }
 
 @media (max-width: 450px) {
@@ -1267,10 +1116,6 @@ section{
 }
 
 
-
-
-
-
 /* sign */
 
 /* Container for login form */
@@ -1283,6 +1128,11 @@ section{
 }
 
 /* Styling the login box */
+
+/*=====================================================
+  Auth - login
+=====================================================*/
+
 .login-box {
     width: 40rem;
     height: auto;
@@ -1363,12 +1213,6 @@ section{
 .flex input[type="checkbox"] {
     margin-right: 0.5rem;
 }
-.flex .remember-me {
-    display: flex;
-    align-items: left;
-    gap: 0.5rem;  /* Controls space between checkbox and label */
-}
-
 .flex a {
     color: var(--green);
     text-decoration: none;
@@ -1416,11 +1260,8 @@ section{
 }
 
 
-
   
   
-
-
 
 
 /* sign in */
@@ -1429,6 +1270,11 @@ section{
 /* Sign-Up Page Main Design */
 
 /* Section Layout */
+
+/*=====================================================
+  Auth - signup
+=====================================================*/
+
 .signup {
     display: flex;
     justify-content: center;
@@ -1510,6 +1356,11 @@ section{
 }
 
 /* Terms and Checkbox */
+
+/*=====================================================
+  Terms page
+=====================================================*/
+
 .terms {
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
@@ -1581,6 +1432,11 @@ section{
 
 
 /* Price card */
+
+/*=====================================================
+  Pricing - plan cards
+=====================================================*/
+
 .plan {
     width: 90%;                /* Use a fluid width for responsiveness */
     max-width: 900px;          /* Keep maximum width of 900px on larger screens */
@@ -1612,16 +1468,16 @@ section{
     margin-top: 10%;
 }
 
-.single-price h1 {
+.single-price h2 {
     font-size: 18px;
     color: #fff;
     line-height: 3;
     text-transform: uppercase;
 }
 
-.price h2 {
+.price h3 {
     font-size: 38px;
-    color: #fff;
+    color: var(--white);
 }
 
 .deals h4 {
@@ -1683,10 +1539,12 @@ section{
 }
 
 
-
-
 /* Error page */
 
+
+/*=====================================================
+  Auth - password recovery
+=====================================================*/
 
 .recovery {
     display: flex;
@@ -1811,6 +1669,11 @@ section{
 
 
 /* payment */
+
+/*=====================================================
+  Payment - checkout form
+=====================================================*/
+
 .payment {
     height: 100vh;
     width: 100%;
@@ -1967,7 +1830,6 @@ hr {
 /* payment */
 
 
-
 /* terms */
 .terms-wrapper {
     display: flex;
@@ -2019,40 +1881,15 @@ p {
 }
 
 
-
   
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Preloader */
+
+/*=====================================================
+  Preloader
+=====================================================*/
+
 .preloader {
     position: fixed;
     top: 0;
@@ -2104,49 +1941,50 @@ p {
 }
 
 
-
-
-
-
 /* Featured Courses Section */
-.featured-courses {
+
+/*=====================================================
+  Home - featured notes
+=====================================================*/
+
+.featured-notes {
     padding: 5rem 10%;
     background-color: var(--light-green);
     text-align: center;
 }
 
-.featured-courses .heading {
+.featured-notes .heading {
     font-size: var(--title-size, 3.5rem);
     text-transform: capitalize;
     color: var(--black);
     margin-bottom: 3rem;
 }
 
-.course-container {
+.note-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap: 2rem;
 }
 
-.course-box {
+.note-box {
     background-color: var(--white);
     border: var(--border);
     padding: 3rem 2rem;
     text-align: center;
     box-shadow: var(--box-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 300px; /* Fixed height for the card */
+    min-height: 30rem; /* grows if the text is longer */
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Ensures buttons stay at the bottom */
 }
 
-.course-box:hover {
+.note-box:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.course-box img {
+.note-box img {
     width: 100px;  /* Increase the icon size */
     height: 100px; /* Increase the icon size */
     object-fit: contain; /* Ensures the image stays within the container without stretching */
@@ -2157,19 +1995,19 @@ p {
     margin-right: auto; /* Centering the image horizontally */
 }
 
-.course-box h3 {
+.note-box h3 {
     font-size: var(--title-size, 2rem);
     color: var(--black);
     margin-bottom: 1rem;
 }
 
-.course-box p {
+.note-box p {
     font-size: var(--graph-size, 1.5rem);
     color: var(--light-color);
     margin-bottom: 2rem;
 }
 
-.course-box .btn {
+.note-box .btn {
     padding: 1rem 3rem;
     font-size: 1.8rem;
     background-color: var(--green);
@@ -2180,16 +2018,18 @@ p {
     transition: background-color 0.3s ease;
 }
 
-.course-box .btn:hover {
+.note-box .btn:hover {
     background-color: var(--light-green);
     color: var(--green);
 }
 
 
-
-
-
 /* Achievement Section */
+
+/*=====================================================
+  Home - achievements
+=====================================================*/
+
 .achievement {
     padding: 1.5rem 10%;
     background-color: var(--white);
@@ -2267,34 +2107,34 @@ p {
 }
 
 
+/*=====================================================
+  Home - note providers
+=====================================================*/
 
-
-
-.instructors{
+.providers{
     background: var(--light-green);
     margin-top: 1rem;
 }
 
 
-.instructors-container {
+.providers-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
     gap: 1.5rem;
     justify-items: center;
-    padding-top: 10px;
+    padding-top: 1rem;
 }
 
 .single-team {
-    background-color: #fff;
-    border: 1px solid #eee;
+    background-color: var(--white);
+    border: 0.1rem solid var(--light-white);
     width: 100%;
     max-width: 600px;
-    height: 280px; /* ✅ Fixed height */
+    min-height: 28rem; /* grows if the text is longer */
     position: relative;
     display: flex;
     align-items: center;
     transition: transform 0.3s ease;
-    overflow: hidden;
 }
 
 .single-team:hover {
@@ -2354,16 +2194,16 @@ p {
     margin-bottom: 5px;
 }
 
-.info-box .name a {
+.info-box .name {
     font-weight: 700;
     font-size: 18px;
-    color: #081828;
+    color: var(--black);
     margin-bottom: 8px;
     display: inline-block;
 }
 
-.info-box .name a:hover {
-    color: #0EDC8D;
+.info-box .name:hover {
+    color: var(--green);
 }
 
 .info-box p {
@@ -2424,14 +2264,12 @@ p {
 }
 
 
-
-
-
-
-
-
-
 /* Premium Teaser Section */
+
+/*=====================================================
+  Home - premium teaser
+=====================================================*/
+
 .premium-teaser {
     background: var(--white);
     padding: 3rem 10% 5rem; /* Reduced top padding */
@@ -2520,35 +2358,11 @@ p {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* our-story.css */
-.story-hero {
-    background-color: var(--light-green);
-    text-align: center;
-    padding: 6rem 2rem 4rem;
-}
 
-.story-hero h1 {
-    font-size: var(--title-size, 4rem);
-    color: var(--green);
-    margin-bottom: 1rem;
-}
-
-.story-hero p {
-    font-size: var(--graph-size, 1.8rem);
-    color: var(--light-color);
-}
+/*=====================================================
+  Our story page
+=====================================================*/
 
 .story-section {
     padding: 5rem 10%;
@@ -2651,12 +2465,223 @@ p {
         padding: 4rem 5%;
     }
 
-    .story-hero h1 {
-        font-size: 3rem;
+        } 
+
+
+/*=====================================================
+  Accessibility and safety helpers
+  Added last so these deliberately win over the rules above.
+=====================================================*/
+
+/* Text for screen readers only - visually hidden but still announced. */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Skip link. Sits off screen until it is focused with the Tab key. */
+.skip-link {
+    position: absolute;
+    top: -10rem;
+    left: 1rem;
+    z-index: 2000;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    background: var(--green);
+    color: var(--white);
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+/* Darkens the hero photo so the white headline stays readable on it. */
+.home .slide {
+    position: relative;
+}
+
+.home .slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, .3));
+}
+
+.home .slide .content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer wordmark. Replaces the hand typed "N o t e S w a p" spacing. */
+.footer .box-container .box .brand {
+    letter-spacing: 0.4rem;
+}
+
+/* Buttons that are styled as .btn need the browser button styling stripped. */
+button.btn {
+    font-family: inherit;
+    background: var(--light-green);
+}
+
+/* Preloader failsafe. If JavaScript never runs, this still clears the
+   overlay so the page can never be left permanently blank. */
+.preloader {
+    animation: preloader-failsafe 0s linear 5s forwards;
+}
+
+@keyframes preloader-failsafe {
+    to {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+/* Respect the operating system "reduce motion" setting. */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 
-    .story-hero p {
-        font-size: 1.4rem;
+    .preloader {
+        display: none;
     }
-} 
+}
 
+/* Feedback line shown under a form after it is submitted. */
+.form-message {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    min-height: 1.6em;
+    padding-top: .5rem;
+    color: var(--green);
+}
+
+.form-message.is-error {
+    color: #c0392b;
+}
+
+.field-error {
+    display: block;
+    font-size: 1.3rem;
+    color: #c0392b;
+    padding-bottom: .5rem;
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+    border: 0.1rem solid #c0392b;
+}
+
+/* The FAQ heading is a <button> so it can be reached with the keyboard. */
+.faq .accordion-container .accordion .accordion-heading {
+    width: 100%;
+    background: none;
+    font-family: inherit;
+    text-align: left;
+}
+
+/* Payment brand icons replaced the missing png files. */
+.payment-options button i {
+    font-size: 2.6rem;
+    color: var(--black);
+}
+
+.checkout-title {
+    font-size: 2.6rem;
+    color: var(--black);
+    padding-bottom: 1.5rem;
+}
+
+.demo-notice {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: var(--light-color);
+    padding: 1.5rem 2rem 0;
+}
+
+.demo-notice i {
+    color: var(--green);
+}
+
+/* Byline under a note's title. */
+.note-meta {
+    font-size: 1.5rem;
+    line-height: 2;
+    color: var(--light-color);
+    padding-bottom: 2rem;
+}
+
+.note-meta a {
+    color: var(--green);
+}
+
+.note-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Course line under a reviewer's name. */
+.reviews .slide .reviewer-course {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--light-color);
+    padding-bottom: .5rem;
+}
+
+/* Intro above the pricing cards. */
+.pricing-intro {
+    text-align: center;
+    padding-bottom: 0;
+}
+
+.pricing-lead {
+    font-size: 1.7rem;
+    line-height: 2;
+    color: var(--light-color);
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+/* 404 page. */
+.not-found {
+    text-align: center;
+}
+
+.not-found img {
+    max-width: 32rem;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.not-found h1 {
+    font-size: var(--title-size, 3.5rem);
+    color: var(--black);
+    padding-bottom: 1rem;
+}
+
+.not-found p {
+    font-size: 1.7rem;
+    line-height: 2;
+    color: var(--light-color);
+    padding-bottom: 1rem;
+}
+
+.not-found-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
