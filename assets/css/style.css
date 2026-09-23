@@ -167,6 +167,11 @@ section{
     color: var(--green);
 }
 
+.header .navbar a[aria-current="page"] {
+    color: var(--green);
+    font-weight: bolder;
+}
+
 .header .icons div {
     cursor: pointer;
     font-size: 2rem;

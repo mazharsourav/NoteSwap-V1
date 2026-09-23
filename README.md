@@ -22,6 +22,7 @@ in a browser, or use the VS Code **Live Server** extension (configured for port 
 │
 ├── assets/
 │   ├── css/style.css        All styling for every page
+│   ├── js/layout.js         The shared header and footer markup
 │   ├── js/main.js           Preloader, navbar toggle, Swiper sliders, accordion
 │   └── img/                 Site imagery (logos, illustrations, hero photos)
 │
@@ -33,6 +34,40 @@ in a browser, or use the VS Code **Live Server** extension (configured for port 
 
 `assets/` holds anything that makes the site *look* the way it does.
 `content/` holds the actual study material the site exists to serve.
+
+## Shared header and footer
+
+The header and footer live in one place — `assets/js/layout.js` — and are injected
+into every page. Each page carries only two placeholders:
+
+```html
+<body>
+    <div id="site-header"></div>
+    ...page content...
+    <div id="site-footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+```
+
+**To change the nav or footer, edit `layout.js` — never the individual pages.**
+
+Notes on how it works:
+
+- `layout.js` must load **before** `main.js`. It runs immediately rather than waiting
+  for `DOMContentLoaded`, so the header exists by the time `main.js` binds the
+  `#menu-btn` / `#close-navbar` handlers.
+- It replaces the placeholder with `outerHTML` rather than filling it with `innerHTML`.
+  That keeps `.header` a direct child of `<body>`, which its `position: sticky` needs.
+- The nav link for the current page is marked `aria-current="page"` and styled by
+  `.header .navbar a[aria-current="page"]`. It does **not** use `class="active"` —
+  that name is already taken by the mobile navbar slide-in (`.header .active`).
+
+Tradeoff: because the header and footer are injected by JavaScript, they are invisible
+to search engine crawlers that do not run JS, and they render a fraction of a second
+after the rest of the page. Acceptable for a mock; revisit if this goes to production.
 
 ## Conventions
 
