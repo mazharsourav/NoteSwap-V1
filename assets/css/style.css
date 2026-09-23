@@ -2530,10 +2530,12 @@ p {
     letter-spacing: 0.4rem;
 }
 
-/* Buttons that are styled as .btn need the browser button styling stripped. */
+/* A native <button> does not inherit font-family, so .btn buttons need it
+   set explicitly. Nothing else belongs here: an element-qualified selector
+   like button.btn outranks a plain class, so a background declared here
+   would override .log-btn, .signup-btn and .recover-btn. */
 button.btn {
     font-family: inherit;
-    background: var(--light-green);
 }
 
 /* Preloader failsafe. If JavaScript never runs, this still clears the
