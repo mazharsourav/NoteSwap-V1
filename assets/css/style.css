@@ -967,7 +967,9 @@ section{
     padding: 1rem 0;
 }
 
-.footer .box-container .box i{
+/* Scoped to the heading. Unscoped, this also hit the social icons nested
+   inside .share a, painting them green on a green background. */
+.footer .box-container .box h3 i{
     color: var(--green);
 }
 
@@ -975,15 +977,19 @@ section{
     margin-top: 1rem;  
 }
 
+/* inline-flex is load bearing: the icon sits in a nested <i> now, so this
+   <a> no longer picks up display: inline-block from a Font Awesome class.
+   As a plain inline element it would ignore width and height entirely. */
 .footer .box-container .box .share a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     height: 4.5rem;
     width: 4.5rem;
-    line-height: 4.5rem;
     font-size: 1.7rem;
     background-color: var(--green);
     color: var(--white);
     margin-right: .3rem;
-    text-align: center; 
 }
 
 .footer .box-container .box .share a:hover{
