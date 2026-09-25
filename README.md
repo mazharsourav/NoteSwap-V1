@@ -160,25 +160,9 @@ blocks the stylesheet from being parsed until the font CSS arrives.
 
 ## Deploying
 
-There is no build step, so any static host works. On Vercel: import the repo and deploy
-with the default settings. Leave the framework preset as **Other**, and leave the build
-command and output directory empty - the repo root is what gets served.
+There is no build step, so any static host works. On Vercel.
 
-Verified locally over HTTP: every page returns 200, `/` serves `index.html`, unknown
-paths fall through to `404.html`, and no filename depends on case (Windows ignores case,
-Linux does not, so a wrong-case reference would work locally and 404 in production).
-
-`cleanUrls` is safe to turn on. The nav highlight normalises the path, so it works
-whether the host serves `/about.html` or `/about`.
-
-After the first deploy, fill in the real domain in three places, or link previews and
-search indexing stay broken:
-
-- `og:image` and `og:url` in every page's `<head>` - Open Graph needs absolute URLs
-- `<loc>` entries in `sitemap.xml`
-- the `Sitemap:` line in `robots.txt`
-
-## Known gaps
+## Known Gaps
 
 Everything below is deliberate for a v1 mock, not an oversight — see "This is a v1"
 above for what fixing these actually looks like.
